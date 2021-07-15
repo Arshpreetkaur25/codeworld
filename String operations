@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+int strlength()
+{
+    char str[] = "Arshpreet Kaur";
+    int i;
+    for (i = 0; str[i] != '\0'; i++);
+    printf("String Length of Arshpreet Kaur is: %d", i);
+    return 0;
+}
+
+
+// =====================================================================
+
+int copystr()
+{
+    char s1[] = "Hello", s2[] = "World";
+    int i;
+    printf("String1: Hello and String2: World\n");
+    printf("After copying\n");
+    for (i = 0; s1[i] != '\0'; i++)
+    {
+        s2[i] = s1[i];
+    }
+    printf("String s2: %s", s2);
+    return 0;
+}
+// =====================================================================
+
+int revstr()
+{
+    char s[] = "Arshpreet";
+    int len = 0;
+    char temp;
+    while (s[len] != '\0')
+    {
+        len++;
+    }
+    for (int i = 0; i < (len - 1) / 2; i++)
+    {
+        temp = s[i];
+        s[i] = s[len - 1 - i];
+        s[len - 1 - i] = temp;
+    }
+    printf("Reversed string : %s", s);
+    return 0;
+}
+// =====================================================================
+
+int constr()
+{
+    char s1[100] = "Arshpreet", s2[] = "Kaur";
+    int length, j;
+    length = 0;
+    while (s1[length] != '\0')
+    {
+        length++;
+    }
+    for (j = 0; s2[j] != '\0'; j++, length++)
+    {
+        s1[length] = s2[j];
+    }
+    printf("After concatenation: %s", s1);
+    return 0;
+}
+
+
+//------------------------------------------------------------------
+
+int main()
+{
+    int ans;
+    char i;
+
+   do
+   {
+
+
+     printf("*******String Operation**********\n 1.String Length \n 2.Copy String \n 3.Reverse String \n 4. Concatenat String \n 5. Exit");
+     printf("\nChoose your option :");
+     scanf("%d",&ans);
+
+      switch(ans)
+      {
+        case 1: strlength();
+                break;
+        case 2: copystr();
+                break;
+        case 3: revstr();
+                break;
+        case 4: constr();
+                break;
+        case 5: printf("Thankyou");
+                break;
+        default: printf("error");
+      }
+      printf("\nDo you want to continue(y/n)?");
+      scanf("%s",&i);
+
+   }while(i=='y');
+   return 0;
+}
+
+//----------------------------------------------------------------------------------------------
